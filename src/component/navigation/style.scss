@@ -1,0 +1,92 @@
+@import "common/style/index.scss";
+///////////////////////////////////////
+.NavigationHeader {
+	padding: 10px;
+	font-size: 30px;
+	text-align: left;
+	background-color: $antiBackground;
+	color: $antiColor;
+}
+.NavigationButton {
+	background-color: white;
+	border-right: 1px solid $selectedBackground;
+	transition: background-color 0.2s linear, color 0.2s linear;
+}
+///////////////////////////////////////
+.NavigationSectionList {
+	float: left;
+	max-width: 180px;
+	margin-right: 15px;
+	background-color: white;
+	margin-bottom: 15px;
+	z-index: 1000;
+}
+.NavigationSection {
+	display: block;
+}
+.NavigationLink {
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+///////////////////////////////////////
+.NavigationTop {
+	width: 100%;
+	border-bottom: 1px solid $selectedBackground;
+}
+///////////////////////////////////////
+
+///////////////////////////////////////
+@media screen and (max-width: 576px) {
+	.NavigationSectionList {
+		position: absolute;
+		left: 0;
+		transition: left 0.4s linear;
+		border: 1px solid #f0f0f0;
+		border-top: 1px solid #f0f0f0;
+		border-left: 0px;
+	}
+	.NavigationSectionList.navigation-responsive-hide {
+		left: -190px;
+	}
+	.NavigationSection {
+		border-bottom: 1px solid $selectedBackground;
+		background-color: white;
+		z-index: 1000;
+	}
+	.NavigationSection:last-child {
+		border-bottom: 0px solid $selectedBackground;
+	}
+	.NavigationBar.isSelected .NavigationButton {
+		background-color: $selectedBackground;
+	}
+}
+///////////////////////////////////////
+@media screen and (min-width: 577px) {
+	.NavigationSectionList {
+		position: relative;
+		border-right: 1px solid $selectedBackground;
+		border-bottom: 1px solid $selectedBackground;
+		bottom: 0;
+		height: 100%;
+	}
+}
+
+.NavigationBackground {
+	
+}
+
+.NavigationButton:hover {
+
+}
+
+.NavigationSection:hover {
+
+}
+
+.NavigationSection.isSelected {
+	background-color: $selectedBackground;
+}
+.NavigationSection.isSelected a {
+	cursor: default;
+}

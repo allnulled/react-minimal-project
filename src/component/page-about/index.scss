@@ -1,0 +1,42 @@
+@import "common/style/index.scss";
+
+.ContactList {
+	display: inline-block;
+	margin: 15px;
+}
+.ContactList > ul {
+	
+}
+.ContactList > ul > li {
+	width: 100%;
+	height: 100%;
+	color: $antiBackground;
+	margin-bottom: 15px;
+	border-left: 4px #333 solid;
+}
+.ContactList > ul > li > a:link,
+.ContactList > ul > li > a:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
+.ContactList > ul > li > a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-right: 15px;
+	border-top-right-radius: 8pt;
+	border-bottom-right-radius: 8pt;
+}
+.ContactList > ul > li > a:hover {
+	background-color: #EFEFEF;
+	text-decoration: underline;
+}
+.ContactList .ContactIcon {
+	width: 30px;
+	margin: 15px;
+}
+
+.ContactLastMessage {
+	text-align: right;
+	clear: both;
+}

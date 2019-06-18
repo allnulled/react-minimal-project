@@ -1,0 +1,55 @@
+@import "common/style/index.scss";
+
+.I18nWidget {
+	margin-left: 15px;
+	margin-down: 15px;
+	font-size: 13px;
+}
+.I18nIcon {
+	height: 12px;
+	max-height: 12px;
+	min-height: 12px;
+}
+.SimpleSelector.I18nWidget {
+	display: inline-block;
+	float: right;
+	border: 1px solid $selectedBackground;
+	border-top: 0px;
+	cursor: pointer;
+	border-bottom: 0px;
+	position: absolute;
+	right: 0;
+	margin: 0;
+	background-color: white;
+	min-width: 105px;
+}
+.SimpleSelectorOption {
+	padding: 5px;
+	text-align: left;
+}
+.SimpleSelectorOptionsList > .SimpleSelectorOption {
+	border-bottom: 1px solid $selectedBackground;
+	text-align: left;
+}
+.SimpleSelectorOptionsList {
+}
+.SimpleSelectorOptionsList > .SimpleSelectorOption:last-child {
+}
+.I18nLabel {
+	padding-left: 10px;
+	padding-right: 10px;
+	vertical-align: middle;
+}
+.SimpleSelectorOption {
+}
+.SimpleSelectorOption.isSelected {
+	background-color: $selectedBackground;
+	color: $selectedColor;
+	cursor: default;
+}
+.SimpleSelectorOptionSelected > .SimpleSelectorOption {
+	border-bottom: 1px solid $selectedBackground;
+	background-color: $selectedBackground;
+	color: $selectedColor;
+	cursor: inherit;
+}

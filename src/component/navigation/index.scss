@@ -1,0 +1,81 @@
+@import "common/style/index.scss";
+
+.NavigationBar {
+	
+}
+///////////////////////////////////////
+.NavigationBar a:link,
+.NavigationBar a:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
+.NavigationBar.isSelected .NavigationButton {
+	background-color: $selectedBackground;
+	color: $selectedColor;
+}
+.NavigationLink {
+	text-align: left;
+	display: block;
+}
+///////////////////////////////////////
+
+
+///////////////////////////////////////
+.NavigationTop {
+	display: table;
+}
+.NavigationButton {
+	display: table-cell;
+	width: 50px;
+	height: 50px;
+	max-width: 50px;
+	max-height: 50px;
+	min-width: 50px;
+	min-height: 50px;
+	font-size: 30px;
+	vertical-align: middle;
+	padding:0;
+	margin: 0;
+	font-size: 45px;
+	cursor: pointer;
+	position: relative;
+	z-index: 2000;
+}
+.NavigationHeader {
+	display: table-cell;
+	vertical-align: middle;
+}
+.NavigationSectionList {
+	display: block;
+}
+///////////////////////////////////////
+
+
+///////////////////////////////////////
+@media screen and (max-width: 576px) {
+	.NavigationBar {
+
+	}
+	.NavigationGroup {
+		padding-left: 10px;
+	}
+	.NavigationBar.isSelected .NavigationBackground {
+		display: block;
+		opacity: 0.7;
+		z-index: 1000;
+	}
+}
+///////////////////////////////////////
+
+.NavigationBackground {
+	display: block;
+	position: fixed;
+	background-color: $selectedBackground;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	z-index: -1;
+	transition: opacity .2s linear;
+}

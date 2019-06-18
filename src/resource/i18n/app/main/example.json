@@ -1,0 +1,41 @@
+{
+	"es": {
+		"translation": {
+			"Inicio": "Inicio",
+			"Bienvenido a la página de inicio": "Bienvenido a la página de inicio",
+			"Esto es la página de inicio": "Esto es la página de inicio",
+			"Nosotros": "Nosotros",
+			"Sobre nosotros": "Sobre nosotros",
+			"Esta página habla sobre nosotros" : "Esta página habla sobre nosotros",
+			"Esta página es para hablar de nosotros": "Esta página es para hablar de nosotros",
+			"Desarrollado con": "Desarrollado con",
+			"por": "por"
+		}
+	},
+	"en": {
+		"translation": {
+			"Inicio": "Home",
+			"Nosotros": "About us",
+			"Bienvenido a la página de inicio": "Welcome to the home page",
+			"Esto es la página de inicio": "This is the home page",
+			"Sobre nosotros": "About us",
+			"Esta página habla sobre nosotros" : "This page talks about us",
+			"Esta página es para hablar de nosotros": "This page is to talk about us",
+			"Desarrollado con": "Developed with",
+			"por": "by"
+		}
+	},
+	"ca": {
+		"translation": {
+			"Inicio": "Inici",
+			"Nosotros": "Nosaltres",
+			"Bienvenido a la página de inicio": "Benvingut a la pàgina d'inici",
+			"Esto es la página de inicio": "Aquesta és la pàgina d'inici",
+			"Sobre nosotros": "Sobre nosaltres",
+			"Esta página habla sobre nosotros" : "Aquesta pàgina parla sobre nosaltres",
+			"Esta página es para hablar de nosotros": "Aquesta pàgina és per parlar de nosaltres",
+			"Desarrollado con": "Desenvolupat amb",
+			"por": "per"
+		}
+	}
+}

@@ -1,0 +1,29 @@
+@import "./reset.css";
+@import "common/style/index.scss";
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./resource/font/Roboto/Roboto-Regular.ttf");
+}
+
+html, body {
+	font-family: "Roboto";
+	font-size: 16px;
+	background-color: $antiBackground;
+}
+
+///////////////////////////////////////
+@media screen and (max-width: 576px) {
+	html, body {
+		font-size: 12px;
+	}
+}
+///////////////////////////////////////
+@media screen and (min-width: 576px) {
+
+}
+
+a:focus {
+	outline: 0;
+	text-decoration: none;
+}

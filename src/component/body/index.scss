@@ -1,0 +1,23 @@
+.Page {
+	text-align: left;
+	padding: 15px;
+	background-color: white;
+}
+.Title {
+	font-weight: bold;
+	font-size: 1.8em;
+	padding-bottom: 15px;
+	text-decoration: underline;
+	text-transform: capitalize;
+}
+.Subtitle {
+	font-weight: bold;
+	font-size: 1.3em;
+	font-style: oblique;
+	padding-bottom: 15px;
+}
+.Contents {}
+.Contents p {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

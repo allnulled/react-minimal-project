@@ -1,0 +1,21 @@
+.SimpleSelector {
+	
+}
+.SimpleSelector:hover {
+	opacity: 1;
+}
+.SimpleSelector.isActive {
+	opacity: 1;
+}
+.SimpleSelector.isActive .SimpleSelectorOptionSelected {
+	background-color: #EFEFEF;
+}
+.SimpleSelector .SimpleSelectorOptionsList {
+	display: none;
+}
+.SimpleSelector.isActive .SimpleSelectorOptionsList {
+	display: block;
+}
+.SimpleSelector {
+
+}
