@@ -1,7 +1,10 @@
-.Page {
-	text-align: left;
+.Body {
+	min-height: 200px;
+	background-color: #F8F8F8;
 	padding: 15px;
-	background-color: white;
+	text-align: left;
+}
+.Page {
 }
 .Title {
 	font-weight: bold;

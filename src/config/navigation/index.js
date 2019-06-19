@@ -1,4 +1,4 @@
-export const brand = "Simple application";
+export const brand = "Minimal app";
 export const sections = [
 	{
 		name: "Inicio",
@@ -7,5 +7,21 @@ export const sections = [
 	{
 		name: "Nosotros",
 		route: "/about"
-	}
+	},
+  {
+    name:"Ejemplo",
+    sections: [{
+      name: "De",
+      sections: [{
+        name: "Anidación",
+        sections: [{
+          name: "De",
+          sections: [{
+            name: "Menú",
+            route: "/example"
+          }]
+        }]
+      }]
+    }]
+  }
 ];

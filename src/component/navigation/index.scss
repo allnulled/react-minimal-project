@@ -6,12 +6,10 @@
 ///////////////////////////////////////
 .NavigationBar a:link,
 .NavigationBar a:visited {
-  text-decoration: inherit;
-  color: inherit;
+  
 }
 .NavigationBar.isSelected .NavigationButton {
-	background-color: $selectedBackground;
-	color: $selectedColor;
+	
 }
 .NavigationLink {
 	text-align: left;
@@ -32,12 +30,10 @@
 	max-height: 50px;
 	min-width: 50px;
 	min-height: 50px;
-	font-size: 30px;
 	vertical-align: middle;
 	padding:0;
 	margin: 0;
 	font-size: 45px;
-	cursor: pointer;
 	position: relative;
 	z-index: 2000;
 }
@@ -47,17 +43,22 @@
 }
 .NavigationSectionList {
 	display: block;
+	float: left;
 }
 ///////////////////////////////////////
 
 
 ///////////////////////////////////////
 @media screen and (max-width: 576px) {
+	.NavigationSectionList {
+		display: block;
+		float: none;
+	}
 	.NavigationBar {
 
 	}
 	.NavigationGroup {
-		padding-left: 10px;
+		
 	}
 	.NavigationBar.isSelected .NavigationBackground {
 		display: block;
@@ -70,12 +71,14 @@
 .NavigationBackground {
 	display: block;
 	position: fixed;
-	background-color: $selectedBackground;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	opacity: 0;
 	z-index: -1;
-	transition: opacity .2s linear;
+}
+
+.NavigationSpacer {
+	width: 100%;
 }

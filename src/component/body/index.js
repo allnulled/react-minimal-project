@@ -11,6 +11,9 @@ export class Body extends React.Component {
 				<Route path="/" exact component={HomePage} />
 				<Route path="/home" exact component={HomePage} />
 				<Route path="/about" component={AboutPage} />
+        <Route path="/example">
+          Hello!
+        </Route>
 			</main>
 		);
 	}

@@ -9,7 +9,10 @@ const Translatable = withTranslation();
 class NavigationButtonComponent extends React.Component {
 	render(...args) {
 		return (
-			<div className="NavigationButton d-sm-none" onClick={this.props.onClickHandler}>
+			<div
+				className="NavigationButton d-sm-none"
+				onClick={this.props.onClickHandler}
+			>
 				{this.props.contents}
 			</div>
 		);
@@ -24,7 +27,14 @@ class NavigationHeaderComponent extends React.Component {
 
 class NavigationCaretComponent extends React.Component {
 	render(...args) {
-		return <i className={"NavigationCaret fa fa-caret-" + (this.props.isSelected ? "down" : "right")} />;
+		return (
+			<i
+				className={
+					"NavigationCaret fa fa-caret-" +
+					(this.props.isSelected ? "down" : "right")
+				}
+			/>
+		);
 	}
 }
 
@@ -38,7 +48,12 @@ class NavigationGroupComponent extends React.Component {
 			<ul className={"NavigationGroup"}>
 				{this.props.sections.map((item, index) => {
 					return (
-						<NavigationSection data={item} navigation={this.props.navigation} level={this.props.level} key={index} />
+						<NavigationSection
+							data={item}
+							navigation={this.props.navigation}
+							level={this.props.level}
+							key={index}
+						/>
 					);
 				})}
 			</ul>
@@ -65,7 +80,9 @@ class NavigationSectionComponent extends React.Component {
 		});
 	}
 	onClickItem(event) {
-		this.props.data && this.props.data.sections ? this.toggleGroup(event) : this.openPage(event);
+		this.props.data && this.props.data.sections
+			? this.toggleGroup(event)
+			: this.openPage(event);
 	}
 	componentWillReceiveProps({ isSelected }) {
 		this.setState({ ...this.state, isSelected });
@@ -75,16 +92,54 @@ class NavigationSectionComponent extends React.Component {
 		const link = (() => {
 			if (this.props.data.route) {
 				return (
-					<Link className="NavigationLink" to={this.props.data.route} onClick={this.onClickItem.bind(this)}>
-						{this.props.data.sections ? <NavigationCaret isSelected={this.state.isSelected} /> : ""}
-						<span className="NavigationLinkLabel">{t(this.props.data.name)}</span>
+					<Link
+						className="NavigationLink"
+						to={this.props.data.route}
+						onClick={this.onClickItem.bind(this)}
+					>
+						<table className="NavigationSpacer">
+							<tbody>
+								<tr>
+									{[...Array(this.props.level).keys()].map(i => (
+										<td key={i} className="NavigationSpace" />
+									))}
+									<td className="NavigationText">
+										{this.props.data.sections ? (
+											<NavigationCaret isSelected={this.state.isSelected} />
+										) : (
+											<i className="NavigationCaret fa fa-circle" />
+										)}
+										<span className="NavigationLinkLabel">
+											{t(this.props.data.name)}
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</Link>
 				);
 			} else {
 				return (
 					<div className="NavigationLink" onClick={this.onClickItem.bind(this)}>
-						{this.props.data.sections ? <NavigationCaret isSelected={this.state.isSelected} /> : ""}
-						<span className="NavigationLinkLabel">{t(this.props.data.name)}</span>
+						<table className="NavigationSpacer">
+							<tbody>
+								<tr>
+									{[...Array(this.props.level).keys()].map(i => (
+										<td key={i} className="NavigationSpace" />
+									))}
+									<td className="NavigationText">
+										{this.props.data.sections ? (
+											<NavigationCaret isSelected={this.state.isSelected} />
+										) : (
+											<i className="NavigationCaret fa fa-circle" />
+										)}
+										<span className="NavigationLinkLabel">
+											{t(this.props.data.name)}
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				);
 			}
@@ -92,7 +147,10 @@ class NavigationSectionComponent extends React.Component {
 		return (
 			<li
 				className={
-					"NavigationSection" + (this.props.navigation.state.page === this.props.data.name ? " isSelected" : "")
+					"NavigationSection" +
+					(this.props.navigation.state.page === this.props.data.name
+						? " isSelected"
+						: "")
 				}
 			>
 				{link}
@@ -113,20 +171,27 @@ class NavigationSectionComponent extends React.Component {
 class NavigationBarComponent extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { isActive: false, refresher: false, page: this.getRoutePage() };
+		this.state = {
+			isActive: false,
+			refresher: false,
+			page: this.getRoutePage()
+		};
 	}
 	getRoutePage() {
 		const regexSlashes = /^\/|\/$/g;
 		const regexHashes = /^#\/?|\/$/g;
 		const pathname = window.location.pathname.replace(regexSlashes, "");
-		const hashname = window.location.hash.replace(regexSlashes, "").replace(regexHashes, "");
-		console.log(pathname, hashname);
+		const hashname = window.location.hash
+			.replace(regexSlashes, "")
+			.replace(regexHashes, "");
+		// console.log(pathname, hashname);
 		const routeSelected = this.props.sections.reduce((result, section) => {
-			if(!section.route) {
+			if (!section.route) {
 				return result;
 			}
 			const routePurified = section.route.replace(regexSlashes, "");
-			const isInSameRoute = (routePurified === pathname) || (routePurified === hashname);
+			const isInSameRoute =
+				routePurified === pathname || routePurified === hashname;
 			if (isInSameRoute) {
 				return section;
 			}
@@ -152,15 +217,32 @@ class NavigationBarComponent extends React.Component {
 	}
 	render(...args) {
 		return (
-			<div className={"NavigationBar" + (this.state.isActive ? " isSelected" : "")}>
+			<div
+				className={"NavigationBar" + (this.state.isActive ? " isSelected" : "")}
+			>
 				<div className="NavigationTop">
-					<NavigationButton onClickHandler={this.toggleNavigation.bind(this)} contents={this.props.buttonContents} />
+					<NavigationButton
+						onClickHandler={this.toggleNavigation.bind(this)}
+						contents={this.props.buttonContents}
+					/>
 					<NavigationHeader contents={this.props.brand} />
 					<NavigationBackground navigation={this} />
 				</div>
-				<ul className={"NavigationSectionList" + (this.state.isActive ? "" : " navigation-responsive-hide")}>
+				<ul
+					className={
+						"NavigationSectionList" +
+						(this.state.isActive ? "" : " navigation-responsive-hide")
+					}
+				>
 					{this.props.sections.map((section, index) => {
-						return <NavigationSection data={section} navigation={this} level={0} key={index} />;
+						return (
+							<NavigationSection
+								data={section}
+								navigation={this}
+								level={0}
+								key={index}
+							/>
+						);
 					})}
 				</ul>
 			</div>
@@ -173,9 +255,12 @@ class NavigationBackgroundComponent extends React.Component {
 		this.props.navigation.setState({ isActive: false });
 	}
 	render() {
-		return <div 
-			className={"NavigationBackground"}
-			onClick={this.onClickBackground.bind(this)}></div>;
+		return (
+			<div
+				className={"NavigationBackground"}
+				onClick={this.onClickBackground.bind(this)}
+			/>
+		);
 	}
 }
 

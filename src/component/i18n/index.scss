@@ -13,10 +13,9 @@
 .SimpleSelector.I18nWidget {
 	display: inline-block;
 	float: right;
-	border: 1px solid $selectedBackground;
+	border: 1px solid $antiBorder;
 	border-top: 0px;
 	cursor: pointer;
-	border-bottom: 0px;
 	position: absolute;
 	right: 0;
 	margin: 0;
@@ -28,7 +27,7 @@
 	text-align: left;
 }
 .SimpleSelectorOptionsList > .SimpleSelectorOption {
-	border-bottom: 1px solid $selectedBackground;
+	border-top: 1px solid $antiBorder;
 	text-align: left;
 }
 .SimpleSelectorOptionsList {
@@ -42,9 +41,14 @@
 }
 .SimpleSelectorOption {
 }
-.SimpleSelectorOption.isSelected {
+.SimpleSelectorOption:hover {
 	background-color: $selectedBackground;
 	color: $selectedColor;
+}
+.SimpleSelectorOption.isSelected {
+	display: none;
+	background-color: $superSelectedBackground;
+	color: $superSelectedColor;
 	cursor: default;
 }
 .SimpleSelectorOptionSelected > .SimpleSelectorOption {

@@ -1,9 +1,13 @@
+@import "common/style/index.scss";
+
 .Footer {
-	clear: both;
+	// clear: both;
 	font-size: 10px;
 	text-align: right;
 	padding: 10px;
-	border-top: 1px solid #EFEFEF;
+	border-top: 1px solid $antiBorder;
+	background-color: $antiBackground;
+	color: $antiColor;
 }
 .FooterIcon {
 	width: 12px;

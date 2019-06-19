@@ -1,5 +1,5 @@
 import i18n from "i18next";
-import translations from "resource/i18n/app/main/example.json";
+import translations from "resource/i18n/app/main/i18n.json";
 import { initReactI18next } from "react-i18next";
 
 var preferredLanguage = "en";
