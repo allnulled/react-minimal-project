@@ -120,4 +120,10 @@ The information of the navigation menu is passed through a `json` object.
 For example, the `src/component/header/index.js` component uses this navigation component with the data specified at the json file `src/config/navigation.index.js`.
 
 
+## Comment
 
+There is an example of all the features in the application itself. I hope it becomes more or less fast for you to start creating a full-featured application from this quiet advanced starting point.
+
+## FAQ
+
+If you have any question, please, open an issue, and I will try to answer as soon as possible.
